@@ -90,7 +90,7 @@ const Status = props => {
 // 
 const mapStateToProps = state => {
   // console.log('props::>>',props);
-  return { activeCategory: state.categoruActivator }; // categoruActivator from reducer in store categories and imported into index in store to combineReducers 
+  return { activeCategory: state.categoryActivator }; // categoryActivator from reducer in store categories and imported into index in store to combineReducers 
 }
 
 const mapDispatchToProps = { select, chooseList }

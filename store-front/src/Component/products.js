@@ -54,10 +54,10 @@ const Status = props => {
         <ul>
           <Box textAlign="center">
             <Typography variant="h2" color="textPrimary">
-              {props.categoruActivator.activeCategory.displayName}
+              {props.categoryActivator.activeCategory.displayName}
             </Typography>
             <Typography variant="h6" color="textSecondary"> 
-              {props.categoruActivator.activeCategory.desciption}
+              {props.categoryActivator.activeCategory.description}
             </Typography>
           </Box>
           {/* <h2>{props.list.results} List</h2> */}
@@ -66,7 +66,6 @@ const Status = props => {
 
             return (
               <Container maxWidth="md" component="main">
-                hiiiiiiiiii
                 <Grid className={classes.grid1} container direction="row" justify="center" alignItems="center">
                   <Grid className={classes.grid2} container item xs={12} sm={6} lg={4} >
                     <Card key={item.name} className={classes.card}>

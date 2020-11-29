@@ -1,6 +1,6 @@
 let initialState = {
     categories: [
-        { name: 'electronics', displayName: 'Elecronics' },
+        { name: 'electronics', displayName: 'Electronics' },
         { name: 'food', displayName: 'Food' },
         { name: 'clothing', displayName: 'Clothing' },
     ]
@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
                 if (item.name === payload) {
                     return {
                         name: item.name, displayName: item.displayName,
-                        desciption: item.desciption
+                        description: item.description
                     }
                 }
                 return item;
