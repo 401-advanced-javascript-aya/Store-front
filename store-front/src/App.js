@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Component/header';
+// import Footer from './Component/footer';
+import Categories from './Component/categories';
+import Products from './Component/products';
+
+import { GridListTileBar,IconButton, GridList, GridListTile, ListSubheader, Link, AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header />
+    <Categories />
+    <Products />
+    <footer>
+      here is the footer
+    </footer>
+    </>
   );
 }
 
