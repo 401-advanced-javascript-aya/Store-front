@@ -84,6 +84,8 @@ const Status = props => {
                       </CardContent>
                       <CardActions>
                         <Button size="large" style={{ fontSize: '0.9rem' }} color="default">Add to my cart </Button>
+                        <Button size="large" style={{ fontSize: '0.9rem' }} color="default">View Details </Button>
+
                       </CardActions>
 
                     </Card>
