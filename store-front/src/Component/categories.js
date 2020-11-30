@@ -1,34 +1,3 @@
-// import React from 'react'
-// import { GridListTileBar,IconButton, GridList, GridListTile, ListSubheader, Link, AppBar, Toolbar, Typography, Button } from '@material-ui/core';
-
-// export default function categories() {
-//     return (
-//       <>
-//         <div>
-// <Typography color="textPrimary" variant="h5" >
-//   Browse our Categories
-//     </Typography>
-//     <br></br>
-//   <Link href="#" >
-//     Electronics | 
-//   </Link>
-//   <Link href="#" >
-//     |  Food
-//   </Link>
-//   <br></br>
-// </div>
-
-// <div  style={{margin:'100px'}}>
-// <Typography color="textPrimary" variant="h3" >
-//       ELECTRONICS
-//     </Typography>
-//     <Typography color="textPrimary" variant="h6" >
-//       Categories Description Goes Here
-//     </Typography>
-//         </div>
-//         </>
-//     )
-// }
 import React from 'react';
 
 import { connect } from 'react-redux';

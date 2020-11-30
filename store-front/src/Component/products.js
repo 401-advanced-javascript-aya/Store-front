@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { chooseList } from '../store/product-reducer';
 import { Box, CardMedia, Container, Grid, Card, CardContent, CardActions, Button, Typography, CardActionArea } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import {addToCart} from '../store/cart.js'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -60,12 +61,9 @@ const Status = props => {
               {props.categoryActivator.activeCategory.description}
             </Typography>
           </Box>
-          {/* <h2>{props.list.results} List</h2> */}
           {props.list.results.map((item, idx) => {
-            // return <li key={idx}>{item.name}<br />{item.price} <br /> {item.image} <br /></li>
-
             return (
-              <Container maxWidth="md" component="main">
+              <Container maxWidth="md" component="main" key={idx}>
                 <Grid className={classes.grid1} container direction="row" justify="center" alignItems="center">
                   <Grid className={classes.grid2} container item xs={12} sm={6} lg={4} >
                     <Card key={item.name} className={classes.card}>
@@ -79,11 +77,14 @@ const Status = props => {
                           {item.name}
                         </Typography>
                         <Typography variant="p" color="textSecondary">
-                          {item.price}
+                          {item.price}$
+                        </Typography><br></br>
+                        <Typography variant="p" color="textSecondary">
+                          In Stock {item.inStock}
                         </Typography>
                       </CardContent>
                       <CardActions>
-                        <Button size="large" style={{ fontSize: '0.9rem' }} color="default">Add to my cart </Button>
+                      <Button key={idx} size="large" style={{ fontSize: '0.9rem' }} color="secondary" onClick={() =>{props.addToCart(item)}}>Add to my cart </Button>
                         <Button size="large" style={{ fontSize: '0.9rem' }} color="default">View Details </Button>
 
                       </CardActions>
@@ -109,6 +110,6 @@ const mapStateToProps = state => {
 };
 
 
-const mapDespatchToProps = { chooseList };
+const mapDespatchToProps = { chooseList,addToCart                                                        };
 
 export default connect(mapStateToProps, mapDespatchToProps)(Status)
