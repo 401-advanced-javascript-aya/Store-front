@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
 
     switch (type) {
         case 'cart':
-            console.log('ayaaaaaaaaa',payload , 'here', state);
+            // console.log('ayaaaaaaaaa',payload , 'here', state);
             let length = state.cart.length;
             payload = { ...payload, id: length + 1 } 
 
@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
             return { cart: [...state.cart, payload], count }
 
         case 'removeFromCart':
-
+console.log('ssssssssssssssssssssssss',state);
             cart = cart.filter(item => {
                 if (item.id !== payload.id) {
                     return item;

@@ -1,3 +1,5 @@
+import { lightBlue } from "@material-ui/core/colors";
+
 let initialState = {
     products: [
         {
@@ -34,16 +36,29 @@ let initialState = {
 
 export default (state = initialState, action) => {
     let { type, payload } = action;
-
     switch (type) {
         case 'choose':
             let products = state.products;
-            let results = state.products.filter((item, idx) => {
-                console.log('payload <=======>', payload);
+             let results = state.products.filter((item, idx) => {
+                // console.log('payload <=======>', payload);
                 return item.category === payload.name;
             });
-            console.log('results >>', results);
+            // console.log('results >>', results);
+            // console.log('llllllllllllllllllllllllllllllllllll >>');
+            
             return { results, products };
+        case 'cart':
+         
+            let productArr = state.products.map((product) => {
+                // console.log('mapppppppp', product);
+                if (product.name === payload.name) {
+                    product.inStock--;
+                }
+                return product;
+              });
+              return {
+                products: productArr, results:state.results 
+              };
 
         default:
             return state;

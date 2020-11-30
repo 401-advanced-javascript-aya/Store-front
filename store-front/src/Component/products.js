@@ -44,10 +44,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Status = props => {
-  console.log('props??????????.....', props);
+  console.log('................', props);
 
   const classes = useStyles();
-
+  // console.log('proooooooooo',props);
   return (
 
     <>
