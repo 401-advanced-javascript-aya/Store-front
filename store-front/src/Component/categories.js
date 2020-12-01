@@ -1,11 +1,10 @@
 import React from 'react';
-
-import { connect } from 'react-redux';
-import { select } from '../store/categories-reducer';
-import { chooseList } from '../store/product-reducer';
-
+// comment {connect} and {select} and { chooseList }
+// import { connect } from 'react-redux';
+// import { select } from '../store/categories-reducer';
+// import { chooseList } from '../store/product-reducer';
+import * as actions from '../store/categories-reducer';
 import { Box, ButtonGroup, Button, CssBaseline } from '@material-ui/core';
-
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Status = props => {
+  useEffect(() => { props.getCategoriesData();}, []);
 
   const classes = useStyles();
   console.log('props......................', props);
@@ -40,11 +40,11 @@ const Status = props => {
       <CssBaseline />
       <Box>
         <ButtonGroup className={classes.btnRoot} variant="text" color="default" aria-label="text primary button group">
-          {props.activeCategory.categories.map((item) => (
-
-            <Button key={item.name} onClick={() => {
-              props.select(item);
-              props.chooseList(item);
+        {props.categoryData.results.map((item,idx) => (
+                       
+                       <Button key={idx} onClick={() => {
+                           props.select(item.name);
+              // props.chooseList(item);
             }}
             >  {item.name}
 
@@ -59,11 +59,13 @@ const Status = props => {
 // 
 const mapStateToProps = state => {
   // console.log('props::>>',props);
-  return { activeCategory: state.categoryActivator }; // categoryActivator from reducer in store categories and imported into index in store to combineReducers 
+  return {categoryData: state.categoryData}; // categories from reducer in store categories and imported into index in store to combineReducers 
+  // return { activeCategory: state.categoryActivator }; // categoryActivator from reducer in store categories and imported into index in store to combineReducers 
 }
 
-const mapDispatchToProps = { select, chooseList }
+const mapDispatchToProps = (dispatch) => ({
+  select:  (name) => dispatch(actions.select(name)),
+  getCategoriesData: () => dispatch(actions.getCategoriesData())
+})
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Status)
-
+export default connect(mapStateToProps , mapDispatchToProps)(Status)
