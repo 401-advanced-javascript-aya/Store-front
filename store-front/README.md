@@ -1,3 +1,18 @@
+# Virtual Store
+An online shopping portal for a fictional store
+
+# Business Requirements
+The application will power an online storefront that will allow our users to browse the product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
+
+# UML :
+lab 36:
+![](UML-36.jpg)
+
+
+lab 37:
+![](UML-37.jpg)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
